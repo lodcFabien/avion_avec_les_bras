@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<Transform> _levelManagers;
     [SerializeField] private CameraController _cameraController;
-    [SerializeField] private PortalCounterView _portalCounterUI;
 
     private AirplaneController _activeAirplane;
     private List<PortalController> _portals = new List<PortalController>();
@@ -40,8 +39,6 @@ public class GameManager : MonoBehaviour
         _portals.Sort((p1, p2) => p1.PortalIndex.CompareTo(p2.PortalIndex));
         _portals.ForEach(x => x.PortalCrossedEvent.AddListener(ActionOnPortalCrossed));
 
-        _portalCounterUI.Initialize(_portals.Count);
-
         UpdatePortalsState();
     }
 
@@ -50,8 +47,6 @@ public class GameManager : MonoBehaviour
         if (portal.PortalIndex == _currentPortalIndex)
         {
             _currentPortalIndex++;
-
-            _portalCounterUI.UpdateCounter(_currentPortalIndex);
 
             UpdatePortalsState();
 

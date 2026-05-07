@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class CompassController : MonoBehaviour
 {
     [SerializeField] private Transform _camera;
-    [SerializeField] private Image _compass;
+    [SerializeField] private CompassView _view;
 
 
     private void Update()
@@ -14,6 +14,6 @@ public class CompassController : MonoBehaviour
 
         offset = offset.Remap(-180, 180, -.5f, .5f);
 
-        _compass.materialForRendering.SetFloat("_Offset", offset);
+        _view.UpdateCompass(offset);
     }
 }
