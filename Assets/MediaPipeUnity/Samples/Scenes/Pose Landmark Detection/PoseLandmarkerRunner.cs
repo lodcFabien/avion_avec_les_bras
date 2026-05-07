@@ -20,9 +20,7 @@ namespace Mediapipe.Unity.Sample.PoseLandmarkDetection
 
     public readonly PoseLandmarkDetectionConfig config = new PoseLandmarkDetectionConfig();
 
-        [SerializeField] private InputController inputController;
-
-        public override void Stop()
+    public override void Stop()
     {
       base.Stop();
       _textureFramePool?.Dispose();
@@ -166,20 +164,20 @@ namespace Mediapipe.Unity.Sample.PoseLandmarkDetection
         {
             _poseLandmarkerResultAnnotationController.DrawLater(result);
 
-            inputController.UpdateRotation(result);
+            InputManager.Instance.UpdateLandmarks(result);
 
             DisposeAllMasks(result);
         }
 
         private void DisposeAllMasks(PoseLandmarkerResult result)
-    {
-      if (result.segmentationMasks != null)
-      {
-        foreach (var mask in result.segmentationMasks)
         {
-          mask.Dispose();
+            if (result.segmentationMasks != null)
+            {
+            foreach (var mask in result.segmentationMasks)
+            {
+              mask.Dispose();
+            }
         }
-      }
     }
   }
 }

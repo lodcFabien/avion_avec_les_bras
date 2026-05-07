@@ -5,18 +5,19 @@ TagManager:
   serializedVersion: 3
   tags:
   - Obstacle
+  - Global Resource
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Plane
   - Water
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Suimono_Water
+  - Suimono_Depth
+  - Suimono_Screen
   - 
   - 
   - 
