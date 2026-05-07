@@ -3,15 +3,13 @@ using UnityEngine.Events;
 
 public class AirplaneController : MonoBehaviour
 {
-    [SerializeField] private InputController inputController;
 
     [SerializeField] private float yawSpeed = 1;
-    [SerializeField] private float rotationSpeed = 10;
-    [SerializeField] private UnityEvent onCrash;
+    [SerializeField] private float _rotationInterpSpeed = 10;
     [SerializeField] private float _forwardSpeed = 20;
     
     private float yaw = 0;
-    private bool _canMove = false;
+    private bool _canMove = true;
 
     public bool CanMove
     {
@@ -27,17 +25,19 @@ public class AirplaneController : MonoBehaviour
 
     void Update()
     {
-        float targetRoll = inputController.TargetRollAngle;
-        float targetPitch = inputController.TargetPitchAngle;
+        float keyboardSensitivity = InputManager.Instance.UseKeyboard ? .05f : 1f;
+
+        float targetRoll = Mathf.Clamp(InputManager.Instance.ArmsAngle, -30, 30);
+        float targetPitch = Mathf.Clamp(InputManager.Instance.TargetPitchAngle,-30,30);
 
         if (_canMove)
         {
-            yaw += targetRoll * yawSpeed * Time.deltaTime;
+            yaw += targetRoll * yawSpeed * Time.deltaTime * keyboardSensitivity;
         }
 
         Quaternion targetRotation = Quaternion.Euler(-targetPitch, yaw, -targetRoll);
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * _rotationInterpSpeed * keyboardSensitivity);
 
         if (_canMove) 
         {
@@ -50,7 +50,6 @@ public class AirplaneController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             _canMove = false;
-            onCrash?.Invoke();
             gameObject.SetActive(false);
         }
     }
