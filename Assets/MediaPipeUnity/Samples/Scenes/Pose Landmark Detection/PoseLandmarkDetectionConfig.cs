@@ -28,7 +28,7 @@ namespace Mediapipe.Unity.Sample.PoseLandmarkDetection
     Tasks.Core.BaseOptions.Delegate.GPU;
 #endif
 
-    public ImageReadMode ImageReadMode { get; set; } = ImageReadMode.CPUAsync;
+    public ImageReadMode ImageReadMode { get; set; } = ImageReadMode.CPU;
 
     public ModelType Model { get; set; } = ModelType.BlazePoseFull;
     public Tasks.Vision.Core.RunningMode RunningMode { get; set; } = Tasks.Vision.Core.RunningMode.LIVE_STREAM;

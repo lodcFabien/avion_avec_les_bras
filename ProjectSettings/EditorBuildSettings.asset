@@ -6,20 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/00_Levels/LicenseGate.unity
+    guid: bbe58e6c6eb19474b9879098149a69b7
   - enabled: 1
     path: Assets/00_Levels/Menu.unity
     guid: 56c3032b6cbfd2941b3921aa6a68f83e
-  - enabled: 1
-    path: Assets/00_Levels/GameScene.unity
-    guid: e4bdaa9c1a9410541bee8e659d7eab9d
   - enabled: 0
     path: Assets/00_Levels/Level 2.unity
     guid: 41131c462daf8044a9d93ee26c825991
   - enabled: 1
     path: Assets/00_Levels/GameScene 1.unity
     guid: d228e06bea0208d4e8796d86f3951b15
+  - enabled: 0
+    path: Assets/MediaPipeUnity/Samples/Scenes/Pose Landmark Detection/Pose Landmark
+      Detection.unity
+    guid: 927caf745c48e562eaa2cda915b091b4
+  - enabled: 0
+    path: Assets/MediaPipeUnity/Samples/Scenes/Face Detection/Face Detection.unity
+    guid: 6398790df6f5f3123a3d09434706eb95
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

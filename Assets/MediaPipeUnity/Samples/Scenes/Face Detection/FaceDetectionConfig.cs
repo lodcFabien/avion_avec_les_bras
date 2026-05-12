@@ -23,7 +23,7 @@ namespace Mediapipe.Unity.Sample.FaceDetection
     Tasks.Core.BaseOptions.Delegate.GPU;
 #endif
 
-    public ImageReadMode ImageReadMode { get; set; } = ImageReadMode.CPUAsync;
+    public ImageReadMode ImageReadMode { get; set; } = ImageReadMode.CPU;
 
     public ModelType Model { get; set; } = ModelType.BlazeFaceShortRange;
 
