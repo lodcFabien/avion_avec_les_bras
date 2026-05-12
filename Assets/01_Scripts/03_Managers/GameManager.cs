@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
 
             if (_currentPortalIndex >= _portals.Count)
             {
+                _currentPortalIndex = 0;
+                GoToMenu();
             }
         }
     }

@@ -209,7 +209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NOT SKYNAUTE
+  m_text: pilotage d'avion avec les bras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -236,13 +236,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1815,6 +1815,7 @@ GameObject:
   - component: {fileID: 1352021691}
   - component: {fileID: 1352021690}
   - component: {fileID: 1352021689}
+  - component: {fileID: 1352021693}
   m_Layer: 5
   m_Name: CTRL_Button 1
   m_TagString: Untagged
@@ -1872,7 +1873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 1352021689}
-  _upInterpSpeed: 0.3
+  _upInterpSpeed: 0.5
   _downInterpSpeed: 2
   _onFilled:
     m_PersistentCalls:
@@ -1960,8 +1961,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 900, y: 140}
+  m_Size: {x: 200, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &1352021693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352021687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f89fa778ec442498507350388a3ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1499810077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2177,7 +2190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: avion de ligne
+  m_text: start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2321,13 +2334,14 @@ GameObject:
   - component: {fileID: 1913018282}
   - component: {fileID: 1913018281}
   - component: {fileID: 1913018280}
+  - component: {fileID: 1913018284}
   m_Layer: 5
   m_Name: CTRL_Button 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1913018279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2344,10 +2358,10 @@ RectTransform:
   - {fileID: 2143760332}
   m_Father: {fileID: 86596761}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -814.94165}
+  m_SizeDelta: {x: 1120, y: 210.11665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913018280
 MonoBehaviour:
@@ -2468,6 +2482,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 900, y: 140}
   m_EdgeRadius: 0
+--- !u!114 &1913018284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913018278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f89fa778ec442498507350388a3ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143760331
 GameObject:
   m_ObjectHideFlags: 0
