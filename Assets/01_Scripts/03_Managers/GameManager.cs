@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CameraController _cameraController;
 
     private AirplaneController _activeAirplane;
+    public AirplaneController ActiveAirplane => _activeAirplane;
+
     private List<PortalController> _portals = new List<PortalController>();
     private int _currentPortalIndex = 0;
 
