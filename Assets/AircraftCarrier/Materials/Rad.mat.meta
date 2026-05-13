@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1e0e392e343946b4fbf08d02ffc8c162
+timeCreated: 1456735318
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 155115
+  packageName: Aircraft Carrier
+  packageVersion: 1.1
+  assetPath: Assets/ACC/Materials/Rad.mat
+  uploadId: 874290

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d75aa6a17e951b7429997cc747d3f6f7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 155115
+  packageName: Aircraft Carrier
+  packageVersion: 1.1
+  assetPath: Assets/ACC/Scene/AirCraftCarrierSettings.lighting
+  uploadId: 874290

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 096af8bde356b38409a245956855071b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 155115
+  packageName: Aircraft Carrier
+  packageVersion: 1.1
+  assetPath: Assets/ACC/Scene/New Universal Render Pipeline Asset_Renderer.asset
+  uploadId: 874290

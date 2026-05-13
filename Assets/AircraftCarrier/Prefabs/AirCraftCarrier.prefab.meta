@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 36789df7dadff4161b3a57d0bee8c686
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 155115
+  packageName: Aircraft Carrier
+  packageVersion: 1.1
+  assetPath: Assets/ACC/Prefabs/AirCraftCarrier.prefab
+  uploadId: 874290

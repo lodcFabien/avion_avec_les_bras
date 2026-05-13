@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 157fc02db55da4fd1b7470bafcaeac07
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 155115
+  packageName: Aircraft Carrier
+  packageVersion: 1.1
+  assetPath: Assets/ACC/Prefabs/Weapon1.prefab
+  uploadId: 874290

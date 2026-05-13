@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3fce4a0e00ffbff49b76b017b1d37fdd
+timeCreated: 1456735320
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 155115
+  packageName: Aircraft Carrier
+  packageVersion: 1.1
+  assetPath: Assets/ACC/Materials/Prop.mat
+  uploadId: 874290
