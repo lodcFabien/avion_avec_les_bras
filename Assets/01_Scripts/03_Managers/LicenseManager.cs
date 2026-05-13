@@ -11,7 +11,7 @@ public class LicenseManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll(); //delete key
+        //PlayerPrefs.DeleteAll(); //delete key
         string savedKey = PlayerPrefs.GetString("GameLicenseKey", "");
 
         if (LicenseValidator.IsLicenseValid(savedKey))
@@ -48,5 +48,10 @@ public class LicenseManager : MonoBehaviour
     private void LoadGame()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void OnClickCopy()
+    {
+        GUIUtility.systemCopyBuffer = _macAddressDisplay.text;
     }
 }

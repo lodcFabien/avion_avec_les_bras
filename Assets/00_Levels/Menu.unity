@@ -2392,7 +2392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 1913018280}
-  _upInterpSpeed: 0.3
+  _upInterpSpeed: 0.5
   _downInterpSpeed: 2
   _onFilled:
     m_PersistentCalls:
