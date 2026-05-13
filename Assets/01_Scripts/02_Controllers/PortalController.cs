@@ -3,9 +3,11 @@ using UnityEngine.Events;
 
 public class PortalController : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer meshRenderer;
-    [SerializeField] private Material activeMaterial;
-    [SerializeField] private Material inactiveMaterial;
+    [SerializeField] private MeshRenderer _meshRenderer;
+    [SerializeField] private Material _activeMaterial;
+    [SerializeField] private Material _inactiveMaterial;
+    [SerializeField] private ParticleSystem _particles;
+    [SerializeField] private AudioSource _audioSource;
 
     [SerializeField] private int _portalIndex;
 
@@ -16,9 +18,9 @@ public class PortalController : MonoBehaviour
 
     public void SetActiveState(bool isActive)
     {
-        if (meshRenderer != null)
+        if (_meshRenderer != null)
         {
-            meshRenderer.material = isActive ? activeMaterial : inactiveMaterial;
+            _meshRenderer.material = isActive ? _activeMaterial : _inactiveMaterial;
         }
     }
 
@@ -27,6 +29,8 @@ public class PortalController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _portalCrossedEvent.Invoke(this);
+            _particles.Play();
+            _audioSource.Play();
         }
     }
 }
