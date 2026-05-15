@@ -40,8 +40,34 @@ public class InputManager : Singleton<InputManager>
     private bool _hasLockedTarget = false;
     private Vector2 _lockedTargetPosition;
 
+    [Header("UI Elements")]
+    [SerializeField] private GameObject _leftHandUI;
+    [SerializeField] private GameObject _rightHandUI;
+
+    private void Awake()
+    {
+        if (FindObjectsByType<InputManager>(FindObjectsSortMode.None).Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        UpdateHandVisibility();
+    }
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            _useKeyboard = !_useKeyboard;
+            UpdateHandVisibility();
+        }
+
         if (_useKeyboard)
         {
             SetMovementValueFromKeyboard();
@@ -98,7 +124,7 @@ public class InputManager : Singleton<InputManager>
             float maxShoulderWidth = -1f;
             for (int i = 0; i < poseLandmarks.Count; i++)
             {
-                var lm = poseLandmarks[i].landmarks;
+                List<NormalizedLandmark> lm = poseLandmarks[i].landmarks;
                 float shoulderWidth = Vector2.Distance(new Vector2(lm[11].x, lm[11].y), new Vector2(lm[12].x, lm[12].y));
 
                 if (shoulderWidth > maxShoulderWidth)
@@ -114,7 +140,7 @@ public class InputManager : Singleton<InputManager>
             float minDistance = float.MaxValue;
             for (int i = 0; i < poseLandmarks.Count; i++)
             {
-                var lm = poseLandmarks[i].landmarks;
+                List<NormalizedLandmark> lm = poseLandmarks[i].landmarks;
                 Vector2 center = new Vector2((lm[11].x + lm[12].x) / 2f, (lm[11].y + lm[12].y) / 2f);
                 float dist = Vector2.Distance(center, _lockedTargetPosition);
 
@@ -126,7 +152,7 @@ public class InputManager : Singleton<InputManager>
             }
         }
 
-        List<Mediapipe.Tasks.Components.Containers.NormalizedLandmark> landmarks = poseLandmarks[bestTargetIndex].landmarks;
+        List<NormalizedLandmark> landmarks = poseLandmarks[bestTargetIndex].landmarks;
 
         _lockedTargetPosition = new Vector2((landmarks[11].x + landmarks[12].x) / 2f, (landmarks[11].y + landmarks[12].y) / 2f);
 
@@ -166,5 +192,11 @@ public class InputManager : Singleton<InputManager>
     private Vector2 GetCanvasPos(Vector2 normalizedPos)
     {
         return new Vector2(normalizedPos.x * Screen.width, (1 - normalizedPos.y) * Screen.height);
+    }
+
+    private void UpdateHandVisibility()
+    {
+        if (_leftHandUI != null) _leftHandUI.SetActive(!_useKeyboard);
+        if (_rightHandUI != null) _rightHandUI.SetActive(!_useKeyboard);
     }
 }

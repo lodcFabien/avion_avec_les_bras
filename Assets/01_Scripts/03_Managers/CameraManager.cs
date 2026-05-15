@@ -8,7 +8,7 @@ public class CameraManager : MonoBehaviour
     {
         if (_cameras.Length > 0)
         {
-            ActivateCamera(0);
+            ActivateCamera(1);
         }
     }
 

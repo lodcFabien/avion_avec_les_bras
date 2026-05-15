@@ -1,13 +1,20 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class AirplaneController : MonoBehaviour
 {
-
     [SerializeField] private float yawSpeed = 1;
     [SerializeField] private float _rotationInterpSpeed = 10;
-    [SerializeField] private float _forwardSpeed = 20;
-    
+    [SerializeField] private float _baseSpeed = 20;
+
+    [Header("Camera Settings")]
+    [SerializeField] private float _cameraZDistance = -29f;
+    [SerializeField] private float _cameraYOffset = 2f;
+
+    [Header("Rotation Limits")]
+    [SerializeField] private float _maxRoll = 30f;
+    [SerializeField] private float _maxPitch = 30f;
+
+    private float _forwardSpeed;
     private float yaw = 0;
     private bool _canMove = true;
 
@@ -23,26 +30,41 @@ public class AirplaneController : MonoBehaviour
         set => _forwardSpeed = value;
     }
 
+    public float CameraZDistance => _cameraZDistance;
+    public float CameraYOffset => _cameraYOffset;
+
+    private void Start()
+    {
+        _forwardSpeed = _baseSpeed;
+    }
+
     void Update()
     {
-        float keyboardSensitivity = InputManager.Instance.UseKeyboard ? .05f : 1f;
+        HandleSpeedInput();
 
-        float targetRoll = Mathf.Clamp(InputManager.Instance.ArmsAngle, -30, 30);
-        float targetPitch = Mathf.Clamp(InputManager.Instance.TargetPitchAngle,-30,30);
+        float targetRoll = Mathf.Clamp(InputManager.Instance.ArmsAngle, -_maxRoll, _maxRoll);
+        float targetPitch = Mathf.Clamp(InputManager.Instance.TargetPitchAngle, -_maxPitch, _maxPitch);
 
         if (_canMove)
         {
-            yaw += targetRoll * yawSpeed * Time.deltaTime * keyboardSensitivity;
+            float turnPower = Mathf.Sin(targetRoll * Mathf.Deg2Rad);
+            yaw += turnPower * 60f * yawSpeed * Time.deltaTime;
         }
 
         Quaternion targetRotation = Quaternion.Euler(-targetPitch, yaw, -targetRoll);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * _rotationInterpSpeed);
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * _rotationInterpSpeed * keyboardSensitivity);
-
-        if (_canMove) 
+        if (_canMove)
         {
             transform.position += transform.forward * _forwardSpeed * Time.deltaTime;
         }
+    }
+
+    private void HandleSpeedInput()
+    {
+        if (Input.GetKeyDown(KeyCode.I)) _forwardSpeed = _baseSpeed;
+        if (Input.GetKeyDown(KeyCode.O)) _forwardSpeed = _baseSpeed * 1.3f;
+        if (Input.GetKeyDown(KeyCode.P)) _forwardSpeed = _baseSpeed * 1.6f;
     }
 
     private void OnCollisionEnter(Collision collision)

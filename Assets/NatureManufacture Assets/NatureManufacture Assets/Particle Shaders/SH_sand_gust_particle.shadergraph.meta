@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 725ed18153566b24594eb5b610bb98c7
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 309456
+  packageName: Coast & Dunes Environment - Dynamic Nature (Beach Sea Islands Dry
+    Desert)
+  packageVersion: 1.0.4
+  assetPath: Assets/NatureManufacture Assets/Particle Shaders/SH_sand_gust_particle.shadergraph
+  uploadId: 752599

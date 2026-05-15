@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: d50ef579375c1e244abe59f298b328c4
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 309456
+  packageName: Coast & Dunes Environment - Dynamic Nature (Beach Sea Islands Dry
+    Desert)
+  packageVersion: 1.0.4
+  assetPath: Assets/NatureManufacture Assets/Foliage Shaders/NM_Cross_2_WS.shader
+  uploadId: 752599

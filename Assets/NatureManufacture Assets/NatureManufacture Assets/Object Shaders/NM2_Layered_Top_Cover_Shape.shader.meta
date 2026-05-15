@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ec259289cec4f8145bb81a5bd3d28ab0
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 309456
+  packageName: Coast & Dunes Environment - Dynamic Nature (Beach Sea Islands Dry
+    Desert)
+  packageVersion: 1.0.4
+  assetPath: Assets/NatureManufacture Assets/Object Shaders/NM2_Layered_Top_Cover_Shape.shader
+  uploadId: 752599

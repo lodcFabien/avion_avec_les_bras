@@ -872,8 +872,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8295675901807877125, guid: b279e7e866f5dfc419073ebccb3470db, type: 3}
+      propertyPath: _maxRoll
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295675901807877125, guid: b279e7e866f5dfc419073ebccb3470db, type: 3}
+      propertyPath: _maxPitch
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295675901807877125, guid: b279e7e866f5dfc419073ebccb3470db, type: 3}
       propertyPath: _forwardSpeed
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295675901807877125, guid: b279e7e866f5dfc419073ebccb3470db, type: 3}
+      propertyPath: _cameraYOffset
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295675901807877125, guid: b279e7e866f5dfc419073ebccb3470db, type: 3}
+      propertyPath: _cameraZDistance
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 8974938414816657561, guid: b279e7e866f5dfc419073ebccb3470db, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
